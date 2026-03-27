@@ -1,0 +1,43 @@
+# mehowz Archive
+
+> Complete archive of messages from mehowz (mehowbrainz / ZenonOrg) in the Zenon Network Telegram channel (@zenonnetwork).
+
+This site documents toxic, aggressive, and threatening behavior by the Telegram user mehowz (username: mehowbrainz, display name: mehowz | ZenonOrg) in the Zenon Network community Telegram channel.
+
+## Data
+
+- Total messages archived: 2978
+- Flagged as toxic/aggressive: 82 groups
+- Date range: November 2019 to March 2026
+- Source: @zenonnetwork Telegram channel
+
+## Flagging Keywords
+
+Messages are flagged when they contain any of these terms:
+idiot, retarded, dumb, pathetic, useless, suck, sucking, kill, fool, clown, garbage, crap, psyops, scam, grift, sham, doxx, doxxed, doxxing
+
+## Structure
+
+All message data is stored in a single JSON file:
+- `/posts.json` - Contains all messages grouped by consecutive posts, with reply context, keyword matches, and direct Telegram links
+
+Each message group includes:
+- Message ID and date
+- Full message content
+- Whether the group is flagged (contains toxic keywords)
+- Which keywords matched
+- Direct link to the original Telegram message
+- Reply context (the message being replied to, including author and content)
+
+## Contributing
+
+The archive can be extended via pull requests to the `public/posts.json` file.
+See: https://github.com/Crash-Out/mehowz.github.io/blob/main/CONTRIBUTING.md
+
+## Links
+
+- Website: https://crash-out.github.io/mehowz.github.io/
+- GitHub: https://github.com/Crash-Out/mehowz.github.io
+- Source channel: https://t.me/zenonnetwork
+- Full data: https://crash-out.github.io/mehowz.github.io/posts.json
+- LLMs full: https://crash-out.github.io/mehowz.github.io/llms-full.txt
