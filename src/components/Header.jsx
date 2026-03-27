@@ -1,11 +1,12 @@
 export default function Header({ meta }) {
-  const scrollToTop = () => {
+  const goHome = () => {
+    history.pushState(null, '', window.location.pathname)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
     <div className="sticky top-0 z-10 bg-[#17212b] border-b border-[#0e1621] px-4 py-2 sm:py-3">
-      <button onClick={scrollToTop} className="flex items-center gap-3 w-full text-left cursor-pointer">
+      <button onClick={goHome} className="flex items-center gap-3 w-full text-left cursor-pointer">
         {/* Avatar */}
         <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#5288c1] flex items-center justify-center text-white font-bold text-sm sm:text-lg shrink-0">
           M
