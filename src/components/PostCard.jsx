@@ -56,7 +56,7 @@ export default function PostCard({ group }) {
   }
 
   return (
-    <div id={`post-${group.id}`} className="flex items-start gap-2.5 mb-3 px-2 sm:px-4 scroll-mt-[100px] sm:scroll-mt-[140px]">
+    <div id={`post-${group.id}`} className="flex items-start gap-2.5 mb-3 px-2 sm:px-4 scroll-mt-[90px] sm:scroll-mt-[220px]">
       {/* Avatar */}
       <div className="w-8 h-8 rounded-full bg-[#5288c1] flex items-center justify-center text-white font-bold text-sm shrink-0 mt-0.5">
         M

@@ -5,7 +5,6 @@ const PAGE_SIZE = 30
 
 export default function PostList({ posts, loading }) {
   const [visible, setVisible] = useState(PAGE_SIZE)
-  const sentinelRef = useRef(null)
 
   // Reset visible count when posts change (search/filter)
   useEffect(() => {
@@ -15,16 +14,24 @@ export default function PostList({ posts, loading }) {
   // Scroll to post if URL has a #post-{id} hash
   useEffect(() => {
     if (!loading && posts.length > 0 && window.location.hash) {
-      // Make sure the target post is visible
       const targetId = window.location.hash.replace('#post-', '')
-      const idx = posts.findIndex(g => String(g.id) === targetId)
+
+      // Find the group - could be the group ID or a message ID within a group
+      let idx = posts.findIndex(g => String(g.id) === targetId)
+      if (idx < 0) {
+        idx = posts.findIndex(g => g.messages.some(m => String(m.id) === targetId))
+      }
+
       if (idx >= 0 && idx >= visible) {
         setVisible(idx + PAGE_SIZE)
       }
+
+      // Use the group's anchor element (always the group ID)
+      const anchorId = idx >= 0 ? `post-${posts[idx].id}` : window.location.hash.slice(1)
       setTimeout(() => {
-        const el = document.querySelector(window.location.hash)
+        const el = document.getElementById(anchorId)
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }, 100)
+      }, 150)
     }
   }, [loading, posts.length])
 
