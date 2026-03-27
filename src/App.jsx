@@ -2,6 +2,7 @@ import Header from './components/Header'
 import SearchBar from './components/SearchBar'
 import PostList from './components/PostList'
 import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
 import { usePosts } from './hooks/usePosts'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
       />
       <PostList posts={posts} loading={loading} />
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
