@@ -23,7 +23,7 @@ export default function PostList({ posts, loading }) {
       }
       setTimeout(() => {
         const el = document.querySelector(window.location.hash)
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 100)
     }
   }, [loading, posts.length])
